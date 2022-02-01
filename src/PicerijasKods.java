@@ -10,6 +10,30 @@ public class PicerijasKods {
 		
 		return Klients;
 	}
+	
+	public static double cenasApr(double cena, String veids, String piedevas, String dzeriens, boolean piegade) {
+		
+		if(veids.equals("siera") || veids.equals("studentu")) {
+			cena+=5.99;
+		}else {
+			cena+=6.99;
+		}
+		
+		if(!piedevas.equals("nav")) {
+			cena+=0.89;
+		}
+		
+		if(dzeriens.equals("kola")) {
+			cena+=1.50;
+		}else if(dzeriens.equals("udens")) {
+			cena+=0.79;
+		}
+		
+		if(piegade = true) {
+			cena+=1.99;
+		}
+		return cena;
+	}
 
 	public static void main(String[] args) {
 		double cena = 0;
@@ -48,13 +72,16 @@ public class PicerijasKods {
 				do {
 					papPied = JOptionPane.showInputDialog("Papildus picas piedevas\nExtra siers | Extra merce | Nav");
 					papPied = papPied.toLowerCase();
-				}while(!papPied.equals("Extra siera") && !papPied.equals("Extra merce") && !papPied.equals("Nav"));
+				}while(!papPied.equals("extra siera") && !papPied.equals("extra merce") && !papPied.equals("nav"));
 				
 				do {
 					dzeriens = JOptionPane.showInputDialog("Dzeriens\nKola | Udens | Nav");
 					dzeriens = dzeriens.toLowerCase();
 				}while(!dzeriens.equals("kola") && !dzeriens.equals("udens") && !dzeriens.equals("nav"));
 				
+				cena = cenasApr(cena,picVeids,papPied,dzeriens,piegade);
+				
+				JOptionPane.showMessageDialog(null,"Pautisana pabeigta!\nCena: "+cena);
 				break;
 			
 			case "2":
