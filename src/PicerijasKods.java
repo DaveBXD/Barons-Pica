@@ -34,15 +34,19 @@ public class PicerijasKods {
 		}
 		return cena;
 	}
+	
+	public static void apstkatit(double cena, boolean piegade, String[] Klients) {
+		JOptionPane.showMessageDialog(null,"PASUTITAJS\nVards: "+Klients[0]+"\nTalrunis: "+Klients[1]+"\nAdrese: "+Klients[2]+"\n\nPASUTIJUMS\nPiegade: "+piegade+"\nCena:"+cena);
+	}
 
 	public static void main(String[] args) {
 		double cena = 0;
-		boolean piegade;
+		boolean piegade = false;
 		String[] Klients = new String[3];
-		String picVeids;
-		String papPied;
-		String dzeriens;
-		String pagPiegade;
+		String picVeids = "";
+		String papPied = "";
+		String dzeriens = "";
+		String pagPiegade ;
 		
 		String izvele;
 		
@@ -70,9 +74,9 @@ public class PicerijasKods {
 				}while(!picVeids.equals("siera") && !picVeids.equals("studentu") && !picVeids.equals("hawaju") && !picVeids.equals("meksikanu") && !picVeids.equals("bbq"));
 				
 				do {
-					papPied = JOptionPane.showInputDialog("Papildus picas piedevas\nExtra siers | Extra merce | Nav");
+					papPied = JOptionPane.showInputDialog("Papildus picas piedevas\n1-Extra siers | 2-Extra merce | Nav");
 					papPied = papPied.toLowerCase();
-				}while(!papPied.equals("extra siera") && !papPied.equals("extra merce") && !papPied.equals("nav"));
+				}while(!papPied.equals("1") && !papPied.equals("2") && !papPied.equals("nav"));
 				
 				do {
 					dzeriens = JOptionPane.showInputDialog("Dzeriens\nKola | Udens | Nav");
@@ -81,11 +85,11 @@ public class PicerijasKods {
 				
 				cena = cenasApr(cena,picVeids,papPied,dzeriens,piegade);
 				
-				JOptionPane.showMessageDialog(null,"Pautisana pabeigta!\nCena: "+cena);
+				JOptionPane.showMessageDialog(null,"Pasutisana pabeigta!\nCena: "+cena);
 				break;
 			
 			case "2":
-				//apstkatit();
+				apstkatit(cena,piegade,Klients);
 				break;
 				
 			case "stop":
