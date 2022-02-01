@@ -41,19 +41,24 @@ public class PicerijasKods {
 				}
 				
 				do {
-					pagPiegade = JOptionPane.showInputDialog("Picas veids\nSiera | Studentu | Hawaju | Meksikanu | BBQ");
-					pagPiegade = pagPiegade.toLowerCase();
-				}while(!pagPiegade.equals("siera") && !pagPiegade.equals("studentu") && !pagPiegade.equals("hawaju") && !pagPiegade.equals("meksikanu") && !pagPiegade.equals("bbq"));
+					picVeids = JOptionPane.showInputDialog("Picas veids\nSiera | Studentu | Hawaju | Meksikanu | BBQ");
+					picVeids = picVeids.toLowerCase();
+				}while(!picVeids.equals("siera") && !picVeids.equals("studentu") && !picVeids.equals("hawaju") && !picVeids.equals("meksikanu") && !picVeids.equals("bbq"));
 				
 				do {
-					pagPiegade = JOptionPane.showInputDialog("Dzeriens\nKola | Udens | Nav");
-					pagPiegade = pagPiegade.toLowerCase();
-				}while(!pagPiegade.equals("kola") && !pagPiegade.equals("udens") && !pagPiegade.equals("nav"));
+					papPied = JOptionPane.showInputDialog("Papildus picas piedevas\nExtra siers | Extra merce | Nav");
+					papPied = papPied.toLowerCase();
+				}while(!papPied.equals("Extra siera") && !papPied.equals("Extra merce") && !papPied.equals("Nav"));
+				
+				do {
+					dzeriens = JOptionPane.showInputDialog("Dzeriens\nKola | Udens | Nav");
+					dzeriens = dzeriens.toLowerCase();
+				}while(!dzeriens.equals("kola") && !dzeriens.equals("udens") && !dzeriens.equals("nav"));
 				
 				break;
 			
 			case "2":
-				apstkatit();
+				//apstkatit();
 				break;
 				
 			case "stop":
