@@ -7,7 +7,7 @@ public class PicerijasKods {
 		Klients[0] = JOptionPane.showInputDialog("Ievadiet vardu");
 		Klients[1] = JOptionPane.showInputDialog("Ievadiet telefonu");
 		Klients[2] = JOptionPane.showInputDialog("Ievadiet adresi");
-		
+		Klients[3] = JOptionPane.showInputDialog("Ievadiet Vecumu");
 		return Klients;
 	}
 	
@@ -36,18 +36,17 @@ public class PicerijasKods {
 	}
 	
 	public static void apstkatit(double cena, boolean piegade, String[] Klients) {
-		JOptionPane.showMessageDialog(null,"PASUTITAJS\nVards: "+Klients[0]+"\nTalrunis: "+Klients[1]+"\nAdrese: "+Klients[2]+"\n\nPASUTIJUMS\nPiegade: "+piegade+"\nCena:"+cena);
+		JOptionPane.showMessageDialog(null,"PASUTITAJS\nVards: "+Klients[0]+"\nTalrunis: "+Klients[1]+"\nAdrese: "+Klients[2]+"\nVecums: "+Klients[3]+"\nPASUTIJUMS\nPiegade: "+piegade+"\nCena:"+cena);
 	}
 
 	public static void main(String[] args) {
 		double cena = 0;
 		boolean piegade = false;
-		String[] Klients = new String[3];
+		String[] Klients = new String[4];
 		String picVeids = "";
 		String papPied = "";
 		String dzeriens = "";
 		String pagPiegade ;
-		
 		String izvele;
 		
 		do {
@@ -69,19 +68,19 @@ public class PicerijasKods {
 				}
 				
 				do {
-					picVeids = JOptionPane.showInputDialog("Picas veids\nSiera | Studentu | Hawaju | Meksikanu | BBQ");
+					picVeids = JOptionPane.showInputDialog("Picas veids\nSiera | 1-Studentu | 2-Hawaju | 3-Meksikanu | 4-BBQ");
 					picVeids = picVeids.toLowerCase();
-				}while(!picVeids.equals("siera") && !picVeids.equals("studentu") && !picVeids.equals("hawaju") && !picVeids.equals("meksikanu") && !picVeids.equals("bbq"));
+				}while(!picVeids.equals("siera") && !picVeids.equals("1") && !picVeids.equals("2") && !picVeids.equals("3") && !picVeids.equals("4"));
 				
 				do {
-					papPied = JOptionPane.showInputDialog("Papildus picas piedevas\n1-Extra siers | 2-Extra merce | Nav");
+					papPied = JOptionPane.showInputDialog("Papildus picas piedevas\n1-Extra siers | 2-Extra merce | 3-Nav");
 					papPied = papPied.toLowerCase();
-				}while(!papPied.equals("1") && !papPied.equals("2") && !papPied.equals("nav"));
+				}while(!papPied.equals("1") && !papPied.equals("2") && !papPied.equals("3"));
 				
 				do {
-					dzeriens = JOptionPane.showInputDialog("Dzeriens\nKola | Udens | Nav");
+					dzeriens = JOptionPane.showInputDialog("Dzeriens\n 1-Kola | 2-Udens | 3-Fanta");
 					dzeriens = dzeriens.toLowerCase();
-				}while(!dzeriens.equals("kola") && !dzeriens.equals("udens") && !dzeriens.equals("nav"));
+				}while(!dzeriens.equals("1") && !dzeriens.equals("2") && !dzeriens.equals("3"));
 				
 				cena = cenasApr(cena,picVeids,papPied,dzeriens,piegade);
 				
